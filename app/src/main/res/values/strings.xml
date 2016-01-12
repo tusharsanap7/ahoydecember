@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Ahoy</string>
+    <string name="action_settings">Settings</string>
+    <!-- Button text -->
+    <string name="btn_logout_from_google">Logout from Google</string>
+    <string name="btn_revoke_access">Revoke Access</string>
+
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_phone_number">PhoneNumberActivity</string>
+    <string name="mobilehint">Enter 10 Digit Mobile Number</string>
+    <string name="sansseriflightfamily">sans-serif-light</string>
+    <string name="verifytext">Verify</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_labels">
+        <item >Home</item>
+        <item >Your Rides</item>
+        <item >Search Ride</item>
+        <item >Offer Ride</item>
+        <item >Emergency Contacts</item>
+        <item >Emergency Button</item>
+        <item >Profile</item>
+        <item >Log Out</item>
+    </string-array>
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_offer_ride">OfferRide</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_emergency_contact">EmergencyContact</string>
+    <string name="title_activity_emergency_contact_main">Emergency_contact_main</string>
+
+</resources>

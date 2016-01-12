@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ahoy.ahoydecember" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".configuration.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="Ahoy | Login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SignupActivity"
+            android:label="Ahoy | Register"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.PhoneNumberActivity"
+            android:label="Ahoy | Register"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.OfferRide"
+            android:label="@string/title_activity_offer_ride"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD77bEG6yMi1qtNIAjIxOsHDJLKkcup3_8" />
+
+        <activity
+            android:name=".activity.EmergencyContact"
+            android:label="@string/title_activity_emergency_contact"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+        <activity
+            android:name=".activity.Emergency_contact_main"
+            android:label="@string/title_activity_emergency_contact_main"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+    </application>
+
+</manifest>
