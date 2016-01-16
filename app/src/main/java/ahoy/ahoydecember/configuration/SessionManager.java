@@ -38,6 +38,10 @@ public class SessionManager {
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
 
+    // Emergency Contact
+
+    public static final String KEY_EMERGENCY_CONTACT="No Contact Stored!";
+
     // Constructor
     public SessionManager(Context context){
         this._context = context;
@@ -61,6 +65,28 @@ public class SessionManager {
         editor.commit();
     }
 
+    //storing the email and emergency contact
+    public void putEmergencyContact(String email, String contact){
+        editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_EMERGENCY_CONTACT, contact);
+        // commit changes
+        editor.commit();
+    }
+
+    public HashMap<String, String> getEmergencyContact()
+    {
+
+
+        HashMap<String, String> user = new HashMap<String, String>();
+        // user name
+        user.put(KEY_EMERGENCY_CONTACT, pref.getString(KEY_EMERGENCY_CONTACT, "No contact is set!"));
+
+        // user email id
+        user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+
+        // return user
+        return user;
+    }
     /**
      * Check login method wil check user login status
      * If false it will redirect user to login page

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,15 +28,18 @@ import ahoy.ahoydecember.R;
 import ahoy.ahoydecember.configuration.AppConfig;
 import ahoy.ahoydecember.configuration.AppController;
 import ahoy.ahoydecember.configuration.SQLiteHandler;
+import ahoy.ahoydecember.configuration.SessionManager;
 
 public class EmergencyContact extends AppCompatActivity implements View.OnClickListener{
     private static final String TAG = EmergencyContact.class.getSimpleName();
     private EditText emergency_contact;
     private Button update_button;
     private Toolbar toolbar;
+    private TextView phoneDisplay;
     private ProgressDialog pDialog;
     private SQLiteHandler db;
-    private String emergency_mobile,email;
+    private String emergency_mobile,econtact,email;
+    SessionManager session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,8 @@ public class EmergencyContact extends AppCompatActivity implements View.OnClickL
         email = extras.getString("email");
         //how about adding back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        session = new SessionManager(getApplicationContext());
+        phoneDisplay = (TextView) findViewById(R.id.phonedisplay);
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -55,9 +61,16 @@ public class EmergencyContact extends AppCompatActivity implements View.OnClickL
         emergency_contact = (EditText) findViewById(R.id.emergency_contact);
 
         update_button.setOnClickListener(this);
-
         // SQLite database handler
-        db = new SQLiteHandler(getApplicationContext());
+       // db = new SQLiteHandler(getApplicationContext());
+
+        // get user data from session
+        HashMap<String, String> user = session.getEmergencyContact();
+        econtact = user.get(SessionManager.KEY_EMERGENCY_CONTACT);
+        phoneDisplay.setText(econtact);
+
+
+
 
     }
     @Override
@@ -95,7 +108,7 @@ public class EmergencyContact extends AppCompatActivity implements View.OnClickL
                 AppConfig.URL_EMERGENCY_CONTACT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Register Response: " + response.toString());
+                Log.d(TAG, "Register Response: " + response);
                 hideDialog();
                 try {
                     JSONObject jObj = new JSONObject(response);
@@ -103,16 +116,21 @@ public class EmergencyContact extends AppCompatActivity implements View.OnClickL
                     if (!error) {
                         // User successfully stored in MySQL
                         // Now store the user in sqlite
+                        //why not try some dope global variable shitz and update there.
 
                         JSONObject user = jObj.getJSONObject("user");
-                        String email = user.getString("email");
-                        String emergency_number = user.getString("emergency_contact");
-                        String created_at = user.getString("created_at");
-
+                        String email1 = user.getString("email");
+                        String emergency_number1 = user.getString("emergency_contact");
+                        //String created_at = user.getString("created_at");
+                        /*
                         // Inserting row in users table
                         db.addEmergencyContact(email, emergency_number, created_at);
-
+                           */
+                        session.putEmergencyContact(email1,emergency_number1);
+                        phoneDisplay.setText(emergency_number1);
                         Toast.makeText(getApplicationContext(), "Emergency contact saved sucessfully!", Toast.LENGTH_LONG).show();
+
+
 
                     }
                     else {

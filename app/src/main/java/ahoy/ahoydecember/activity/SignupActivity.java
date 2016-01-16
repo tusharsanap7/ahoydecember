@@ -147,8 +147,6 @@ public class SignupActivity extends AppCompatActivity implements OnClickListener
     @Override
     public void onConnected(Bundle arg0) {
         mSignInClicked = false;
-        //Toast.makeText(this, "User is connected!", Toast.LENGTH_SHORT).show();
-
         // Get user's information
         getProfileInformation();
         // Update the UI after signin

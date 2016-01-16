@@ -2,6 +2,9 @@ package ahoy.ahoydecember.activity;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -9,13 +12,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +41,10 @@ public class FragmentDrawer extends Fragment {
         private static String[] titles = null;
         private FragmentDrawerListener drawerListener;
         private TextView username,email;
-
+        private ImageView profilepic;
+        private String url;
+        // Profile pic image size in pixels
+        private static final int PROFILE_PIC_SIZE = 400;
         public FragmentDrawer() {
 
         }
@@ -73,6 +82,7 @@ public class FragmentDrawer extends Fragment {
             recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
             email=(TextView) layout.findViewById(R.id.email);
             username=(TextView)layout.findViewById(R.id.username);
+            profilepic=(ImageView)layout.findViewById(R.id.profile_image);
             adapter = new NavigationDrawerAdapter(getActivity(), getData());
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -98,6 +108,42 @@ public class FragmentDrawer extends Fragment {
         email.setText(e);
 
     }
+
+    public void setProfilePhoto(String personPhotoUrl){
+        personPhotoUrl = personPhotoUrl.substring(0,
+                personPhotoUrl.length() - 2)
+                + PROFILE_PIC_SIZE;
+        new LoadProfileImage(profilepic).execute(personPhotoUrl);
+    }
+    /**
+     * Background Async task to load user profile picture from url
+     * */
+    private class LoadProfileImage extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public LoadProfileImage(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
+    } //profile pic's code khatam
+
+
         public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
             containerView = getActivity().findViewById(fragmentId);
             mDrawerLayout = drawerLayout;
@@ -185,7 +231,6 @@ public class FragmentDrawer extends Fragment {
         public interface FragmentDrawerListener {
             public void onDrawerItemSelected(View view, int position);
         }
-
 
 
     }

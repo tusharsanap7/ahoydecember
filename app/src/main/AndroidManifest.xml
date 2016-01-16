@@ -66,11 +66,6 @@
             android:label="@string/title_activity_emergency_contact"
             android:theme="@style/MyMaterialTheme" >
         </activity>
-        <activity
-            android:name=".activity.Emergency_contact_main"
-            android:label="@string/title_activity_emergency_contact_main"
-            android:theme="@style/MyMaterialTheme" >
-        </activity>
     </application>
 
 </manifest>

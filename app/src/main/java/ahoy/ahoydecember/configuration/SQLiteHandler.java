@@ -44,9 +44,12 @@ public class SQLiteHandler extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         //user table
         String CREATE_LOGIN_TABLE = "CREATE TABLE " + TABLE_USER + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_EMAIL + " TEXT UNIQUE," + KEY_PHONE_NUMBER + " TEXT,"
-                +KEY_AGE + " TEXT," + KEY_PHOTO_URL + "TEXT,"
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_NAME + " TEXT,"
+                + KEY_EMAIL + " TEXT UNIQUE,"
+                + KEY_PHONE_NUMBER + " TEXT,"
+                + KEY_AGE + " TEXT,"
+                + KEY_PHOTO_URL + "TEXT,"
                 + KEY_CREATED_AT + " TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
 
@@ -54,7 +57,7 @@ public class SQLiteHandler extends SQLiteOpenHelper{
         String CREATE_EMERGENCY_CONTACT_TABLE= "CREATE TABLE " + TABLE_EMERGENCY_CONTACT + "("
                 + KEY_EMAIL + " INTEGER PRIMARY KEY,"+ KEY_EMERGENCY_CONTACT+ " TEXT,"
                 + KEY_CREATED_AT + " TEXT" + ")";
-
+        db.execSQL(CREATE_EMERGENCY_CONTACT_TABLE);
         Log.d(TAG, "Database tables created");
     }
 
@@ -73,13 +76,12 @@ public class SQLiteHandler extends SQLiteOpenHelper{
      * */
     public void addUser(String name, String email, String photourl, String phonenumber, String age, String created_at) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, name); // Name
         values.put(KEY_EMAIL, email); // Email
         values.put(KEY_PHONE_NUMBER, phonenumber); // phonenumber
-        values.put(KEY_PHOTO_URL, photourl); // phonenumber
-        values.put(KEY_AGE, age); // phonenumber
+        values.put(KEY_AGE, age); // age
+        values.put(KEY_PHOTO_URL, photourl); // url
         values.put(KEY_CREATED_AT, created_at); // Created At
 
         // Inserting Row
@@ -104,6 +106,9 @@ public class SQLiteHandler extends SQLiteOpenHelper{
 
         Log.d(TAG, "Emergency contact added!: " + id);
     }
+
+
+
     /**
      * Getting user data from database
      * */
@@ -119,8 +124,8 @@ public class SQLiteHandler extends SQLiteOpenHelper{
             user.put("name", cursor.getString(1));
             user.put("email", cursor.getString(2));
             user.put("phonenumber", cursor.getString(3));
-            user.put("photourl", cursor.getString(4));
-            user.put("age", cursor.getString(5));
+            user.put("age", cursor.getString(4));
+            user.put("photourl", cursor.getString(5));
             user.put("created_at", cursor.getString(6));
         }
         cursor.close();

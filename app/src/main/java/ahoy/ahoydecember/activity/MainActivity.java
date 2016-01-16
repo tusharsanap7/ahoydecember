@@ -2,13 +2,7 @@ package ahoy.ahoydecember.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,24 +10,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.plus.Plus;
 
 import java.util.HashMap;
 
 import ahoy.ahoydecember.R;
+import ahoy.ahoydecember.configuration.SQLiteHandler;
 import ahoy.ahoydecember.configuration.SessionManager;
 
 //google packages
@@ -42,18 +33,18 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         ConnectionCallbacks, OnConnectionFailedListener, OnMapReadyCallback {
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
-    private FragmentDrawer textDisplay;//showing email and username;
+    private FragmentDrawer Display;//showing email and username;
     //adding google sign out and session management things below
     SessionManager session;
     GoogleApiClient mGoogleApiClient;
     boolean mSignInClicked;
+    private SQLiteHandler db;
     public String name, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -61,11 +52,12 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
-        textDisplay = (FragmentDrawer)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+
         // display the first navigation drawer view on app launch
         //displayView(0);
         // Session class instance
+        // SqLite database handler
+        db = new SQLiteHandler(getApplicationContext());
         session = new SessionManager(getApplicationContext());
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -75,29 +67,34 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 .addScope(Plus.SCOPE_PLUS_LOGIN).build();
         //check if logged in if not proceed with login screen automatically
         session.checkLogin();
-        // get user data from session
-        HashMap<String, String> user = session.getUserDetails();
 
+        // get user data from session
+
+        HashMap<String, String> user = session.getUserDetails();
         // name
         name = user.get(SessionManager.KEY_NAME);
-
         // email
-        email = user.get(SessionManager.KEY_EMAIL);
+        email = user.get(SessionManager.KEY_EMAIL);//Don't ever fucking comment this shit man.
+
+
+        // Fetching user details from sqlite
+
+        //url=user.get("photourl");
+
+        drawerFragment.setTextViewText(name,email);
+        //drawerFragment.setProfilePhoto(url);
         //maps implementation starts here
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        textDisplay.setTextViewText(name,email);
+
 
     }//onCreate Finish
 
 
     @Override
     public void onMapReady(GoogleMap map) {
-
         map.setMyLocationEnabled(true);
-
-
     }
 
 
@@ -162,6 +159,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+
+
+
     @Override
     public void onDrawerItemSelected(View view, int position) {
         displayView(position);

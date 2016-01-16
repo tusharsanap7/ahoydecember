@@ -168,29 +168,12 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
     @Override
     public void onConnected(Bundle arg0) {
         mSignInClicked = false;
-        //Toast.makeText(this, "User is connected!", Toast.LENGTH_SHORT).show();
-
         // Get user's information
         getProfileInformation();
-        // Update the UI after signin
-        //updateUI(true); all features are included in getProfileInformation
+
 
     }
 
-    /**
-     * Updating the UI, showing/hiding buttons and profile layout
-     * */
-   /* private void updateUI(boolean isSignedIn) {
-        if (isSignedIn) {
-            // Staring MainActivity
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(i);
-            finish();
-        }
-        else {
-            btnSignIn.setVisibility(View.VISIBLE);
-        }
-    }//
 
     /**
      * Fetching user's information name, email, profile pic
@@ -300,7 +283,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                         String age = user.getString("age");
 
                         // Inserting row in users table
-                        db.addUser(name, email,photourl,phonenumber, age, created_at);
+                        db.addUser(name, email, photourl, phonenumber, age, created_at);
                         //added later on remove if app not workking as expected , it's added because we have stored all shit in sqlite so no need to keep him logged in i guess
                         if (mGoogleApiClient.isConnected()) {
                             Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);

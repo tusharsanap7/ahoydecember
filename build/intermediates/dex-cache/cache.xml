@@ -2,11 +2,235 @@
 <items version="2" >
 
     <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-a639e82c02321790702ccc6ff382cd4f71f0a939.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-6e42b80b46c1fdc8a2bcdce561bf8524662e98cd.jar" />
+    </item>
+    <item
+        jar="E:\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-34fba148cba0f62e4ea15d93de2f8f129308ba63.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-2c86a8f151727cb731c0535de4542d7d8cf1ae0c.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-a7d60d278ea5a8149aaab1d780c5454277aea743.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-e57b66cf3f33d0f0648b25fa3bf0f9f0c65282e1.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-e5558123056c749d8aae8a78c99a41f73dafe184.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-09aa1a74c0aef9387732a54e0021141a2fabf1be.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-eafe4aac1567b524fa29cb8b049e1603bb7b3ad8.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-c5532bc9afe58a7df792e53e509e96f94aa794d6.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-8649ccab0fcd98f5222e5bd003b73e8c0e5d27d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Deepak Shinde\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\library-1.0.19-b7b0f7ec2b449ff5abb1fef0b38e5d691daab7ee.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-74dcef5724301eb6a945aa6ecb713539df1a2058.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-d8978f53f8983b08d317bb164b48162739a62909.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-171eb4726fc832c31a2cf21c6fb5cb2d7ff67f7e.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-8d687d199be22a9b7b4f8f51c98133107bff01a3.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-e5d9f51eacd749d2c137afbe9c53c46ab55bb677.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-d3f99c33535b447ba550def914352b48da63e2e0.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-19b2a367fb518bd74753b8b981add59401183944.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-7a3bab1d07e49cf52d8906ed7510551d760714fd.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-f28942e9125ec018bdad7b1abd41a8c8a286fe35.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-8334e25f0e0b7137c17742643101bc4ff4a3d6d2.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-beb6d219235353b754fd0c06df439e55628d8594.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-00c7bf17850bbc04c1e8f715472d7a2d5aa997a6.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-665ce542f921a61c146eb5b378a20407f1f0eaf1.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-2b5fcaa70c3031f1dfa3cacc3648296eb6c8c947.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-f8bde0bd952102a5f99c1f931376431e636edd84.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-0fdd84cb0b871b10b51262d89984c3f52e74538b.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-320ac7816c761ad50f10cad4778441e166c2a531.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-e032ae3f4ced615f97ac53bdafab67f131a01b08.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-6254ce78adcff4bc05df3b221615ba9e0bb84c84.jar" />
+    </item>
+    <item
         jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
         <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-282d904d487df4eee462865823ea48564f1fe0af.jar" />
+    </item>
+    <item
+        jar="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="E:\Deepak Shinde\AndroidStudioProjects\ahoydecember\app\build\intermediates\pre-dexed\debug\classes-83648e01b4e0e7f1f91e65516b4b45a071f80b56.jar" />
     </item>
 
 </items>
