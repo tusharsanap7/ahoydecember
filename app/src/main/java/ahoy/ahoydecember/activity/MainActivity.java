@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         Display = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        Display.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
 
 
         // SqLite database handler
@@ -86,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         url = user.get(SessionManager.KEY_URL);
 
         Display.setTextViewText(name, email);
-        Display.setProfilePhoto(url);
+        //Display.setProfilePhoto(url);
         //maps implementation starts here
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);

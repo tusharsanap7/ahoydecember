@@ -38,7 +38,7 @@ public class SessionManager {
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
     //url
-    public static final String KEY_URL="url";
+    public static final String KEY_URL = "url";
     // Emergency Contact
 
     public static final String KEY_EMERGENCY_CONTACT="No Contact Stored!";
@@ -63,7 +63,7 @@ public class SessionManager {
         editor.putString(KEY_EMAIL, email);
 
         //storing profile url
-        editor.putString(KEY_URL,url);
+        editor.putString(KEY_URL, url);
 
         // commit changes
         editor.commit();
@@ -102,7 +102,7 @@ public class SessionManager {
             // user is not logged in redirect him to Login Activity
             Intent i = new Intent(_context, LoginActivity.class);
             // Closing all the Activities
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);//Initially it had clear TOP
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Initially it had clear TOP and the TASK
             // Add new Flag to start new Activity
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
