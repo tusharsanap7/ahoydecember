@@ -188,7 +188,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                 String personGooglePlusProfile = currentPerson.getUrl();
                 String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
                 //session.createLoginSession(personName, email);
-                checkLogin(email, personName);
+                checkLogin(email, personName, personPhotoUrl);
                 Log.e(TAG, "Name: " + personName + ", plusProfile: "
                         + personGooglePlusProfile + ", email: " + email
                         + ", Image: " + personPhotoUrl);
@@ -248,7 +248,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
     /**
      * function to verify login details in mysql db
      * */
-    private void checkLogin(final String email, final String name) {
+    private void checkLogin(final String email, final String name, final String url) {
         // Tag used to cancel the request
         String tag_string_req = "req_login";
 
@@ -271,7 +271,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                     if (!error) {
                         // user successfully logged in
                         // Create login session
-                        session.createLoginSession(name,email);
+                        session.createLoginSession(name,email,url);
 
                         // Now store the user in SQLite
                         JSONObject user = jObj.getJSONObject("user");

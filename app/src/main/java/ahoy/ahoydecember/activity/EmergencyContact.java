@@ -1,5 +1,5 @@
 package ahoy.ahoydecember.activity;
-
+// Remove Shared Preferences from here and add sqlite mahn!
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;

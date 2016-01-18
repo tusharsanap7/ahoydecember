@@ -37,7 +37,8 @@ public class SessionManager {
 
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
-
+    //url
+    public static final String KEY_URL="url";
     // Emergency Contact
 
     public static final String KEY_EMERGENCY_CONTACT="No Contact Stored!";
@@ -51,7 +52,7 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String name, String email){
+    public void createLoginSession(String name, String email, String url){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -60,6 +61,9 @@ public class SessionManager {
 
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
+
+        //storing profile url
+        editor.putString(KEY_URL,url);
 
         // commit changes
         editor.commit();
@@ -118,6 +122,8 @@ public class SessionManager {
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
 
+        //user url dp
+        user.put(KEY_URL,pref.getString(KEY_URL,null));
         // return user
         return user;
     }

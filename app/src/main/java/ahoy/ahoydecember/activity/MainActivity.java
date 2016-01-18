@@ -1,8 +1,11 @@
 package ahoy.ahoydecember.activity;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     GoogleApiClient mGoogleApiClient;
     boolean mSignInClicked;
     private SQLiteHandler db;
-    public String name, email;
+    public String name, email, url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +56,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
-        // display the first navigation drawer view on app launch
-        //displayView(0);
-        // Session class instance
+        Display = (FragmentDrawer)
+                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        Display.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
+
+
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
         session = new SessionManager(getApplicationContext());
@@ -75,14 +80,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         name = user.get(SessionManager.KEY_NAME);
         // email
         email = user.get(SessionManager.KEY_EMAIL);//Don't ever fucking comment this shit man.
+        //url
+        url = user.get(SessionManager.KEY_URL);
 
-
-        // Fetching user details from sqlite
-
-        //url=user.get("photourl");
-
-        drawerFragment.setTextViewText(name,email);
-        //drawerFragment.setProfilePhoto(url);
+        Display.setTextViewText(name, email);
+        Display.setProfilePhoto(url);
         //maps implementation starts here
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
@@ -94,6 +96,16 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     @Override
     public void onMapReady(GoogleMap map) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         map.setMyLocationEnabled(true);
     }
 
