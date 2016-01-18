@@ -4,8 +4,10 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     @Override
     public void onMapReady(GoogleMap map) {
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -173,15 +176,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     }
 
 
-
-
-
-
-
     @Override
     public void onDrawerItemSelected(View view, int position) {
         displayView(position);
     }
+
     private void displayView(int position) {
         switch (position) {
             case 0:
@@ -193,42 +192,14 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 //emergency_contact_no
                 Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
                 Bundle extras = new Bundle();
-                extras.putString("email",email);
+                extras.putString("email", email);
                 intent.putExtras(extras);
                 startActivity(intent);
                 break;
             case 7:
                 // Clear the session data.This will clear all session data and redirect user to LoginActivity.
                 // case 6 is for logout button.
-                AlertDialog.Builder builder =
-                        new AlertDialog.Builder(this);
-                builder.setTitle("Log Out");
-                builder.setMessage("Are you sure?");
-                builder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        session.logoutUser();
-                        if (mGoogleApiClient.isConnected()) {
-                            Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-                            mGoogleApiClient.disconnect();
-                            mGoogleApiClient.connect();
-                            //updateUI(false);
-                            System.err.println("LOG OUT ^^^^^^^^^^^^^^^^^^^^ SUCESS");
-                        }
-                        dialog.dismiss();
-                    }
-
-                } );
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do nothing
-                        dialog.dismiss();
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
+                exit_alert();
                 break;
             default:
                 break;
@@ -236,4 +207,35 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
+    private void exit_alert() {
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(this);
+        builder.setTitle("Log Out");
+        builder.setMessage("Are you sure?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                session.logoutUser();
+                if (mGoogleApiClient.isConnected()) {
+                    Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+                    mGoogleApiClient.disconnect();
+                    mGoogleApiClient.connect();
+                    //updateUI(false);
+                    System.err.println("LOG OUT ^^^^^^^^^^^^^^^^^^^^ SUCESS");
+                }
+                dialog.dismiss();
+            }
+
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 }
