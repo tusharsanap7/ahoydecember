@@ -105,7 +105,9 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/delete"
                 android:id="@+id/del"
-                android:layout_gravity="right"/>
+                android:clickable="true"
+                android:layout_gravity="right"
+                android:onClick="del_clicked"/>
            </android.support.v7.widget.CardView>
 
     </LinearLayout>
