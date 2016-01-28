@@ -49,7 +49,7 @@ public class SQLiteHandler extends SQLiteOpenHelper{
                 + KEY_EMAIL + " TEXT UNIQUE,"
                 + KEY_PHONE_NUMBER + " TEXT,"
                 + KEY_AGE + " TEXT,"
-                + KEY_PHOTO_URL + "TEXT,"
+                //+ KEY_PHOTO_URL + "TEXT,"
                 + KEY_CREATED_AT + " TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
 
@@ -81,7 +81,7 @@ public class SQLiteHandler extends SQLiteOpenHelper{
         values.put(KEY_EMAIL, email); // Email
         values.put(KEY_PHONE_NUMBER, phonenumber); // phonenumber
         values.put(KEY_AGE, age); // age
-        values.put(KEY_PHOTO_URL, photourl); // url
+        //values.put(KEY_PHOTO_URL, photourl); // url
         values.put(KEY_CREATED_AT, created_at); // Created At
 
         // Inserting Row
@@ -125,7 +125,7 @@ public class SQLiteHandler extends SQLiteOpenHelper{
             user.put("email", cursor.getString(2));
             user.put("phonenumber", cursor.getString(3));
             user.put("age", cursor.getString(4));
-            user.put("photourl", cursor.getString(5));
+            //user.put("photourl", cursor.getString(5));
             user.put("created_at", cursor.getString(6));
         }
         cursor.close();

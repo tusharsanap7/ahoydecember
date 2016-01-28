@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/rides"
+            android:checked="false"
+            android:icon="@drawable/car"
+            android:title="@string/your_rides" />
+
+        <item
+            android:id="@+id/search_ride"
+            android:checked="false"
+            android:icon="@drawable/search"
+            android:title="@string/search_ride" />
+
+        <item
+            android:id="@+id/offer_ride"
+            android:checked="false"
+            android:icon="@drawable/offer"
+            android:title="@string/offer_ride" />
+
+        <item
+            android:id="@+id/emergency_contact"
+            android:checked="false"
+            android:icon="@drawable/emergency_contact"
+            android:title="@string/emergency_contact" />
+
+        <item
+            android:id="@+id/emergency_button"
+            android:checked="false"
+            android:icon="@drawable/emergency_button"
+            android:title="@string/emergency_button" />
+
+        <item
+            android:id="@+id/profile"
+            android:checked="false"
+            android:icon="@drawable/user"
+            android:title="@string/profile" />
+
+
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/logout"
+            android:title="@string/log_out" />
+        </group>
+</menu>

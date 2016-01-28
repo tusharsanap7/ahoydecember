@@ -228,6 +228,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                     mGoogleApiClient.disconnect();
                     mGoogleApiClient.connect();
                 }
+
                 Intent j  = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(j);
                 finish();
@@ -283,7 +284,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                         String age = user.getString("age");
 
                         // Inserting row in users table
-                        db.addUser(name, email, photourl, phonenumber, age, created_at);
+                       // db.addUser(name, email, photourl, phonenumber, age, created_at);
                         //added later on remove if app not workking as expected , it's added because we have stored all shit in sqlite so no need to keep him logged in i guess
                         if (mGoogleApiClient.isConnected()) {
                             Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);

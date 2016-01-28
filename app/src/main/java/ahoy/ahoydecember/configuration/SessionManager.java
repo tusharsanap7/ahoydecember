@@ -102,7 +102,7 @@ public class SessionManager {
             // user is not logged in redirect him to Login Activity
             Intent i = new Intent(_context, LoginActivity.class);
             // Closing all the Activities
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Initially it had clear TOP and the TASK
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);//Initially it had clear TOP and the TASK
             // Add new Flag to start new Activity
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -123,7 +123,7 @@ public class SessionManager {
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
 
         //user url dp
-        user.put(KEY_URL,pref.getString(KEY_URL,null));
+        user.put(KEY_URL, pref.getString(KEY_URL,"HI"));//null before
         // return user
         return user;
     }
